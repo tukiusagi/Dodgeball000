@@ -20,6 +20,4 @@ void UninitResult(void);
 void UpdateResult(void);
 void DrawResult(void);
 
-void SetResult(D3DXVECTOR3 pos, D3DXVECTOR3 move, D3DXCOLOR col, float fWidth, float fHeight, int nType);
-
 #endif

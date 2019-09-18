@@ -39,5 +39,6 @@ D3DXVECTOR3 *GetPlayerPosOld(int nNum);
 D3DXVECTOR3 *GetPlayerRot(int nNum);
 D3DXVECTOR3 *GetPlayerMove(int nNum);
 float *GetPlayerRadius(int nNum);
+bool GetPlayerUse(int nNum);		//¶€ó‘Ô‚Ìæ“¾
 
 #endif

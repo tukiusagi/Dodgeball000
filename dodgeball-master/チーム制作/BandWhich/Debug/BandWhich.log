@@ -1,2 +1,6 @@
-﻿  BandWhich.vcxproj -> C:\Users\game329\Documents\GitHub\Dodgeball000\dodgeball-master\チーム制作\BandWhich\Debug\BandWhich.exe
+﻿cl : コマンド ライン warning D9028: 簡易リビルド時のエラーです、通常のビルドに戻します
+  player.cpp
+c:\users\game329\documents\github\dodgeball000\dodgeball-master\チーム制作\bandwhich\script\player.cpp(675): warning C4244: '引数': 'int' から 'FLOAT' への変換です。データが失われる可能性があります。
+c:\users\game329\documents\github\dodgeball000\dodgeball-master\チーム制作\bandwhich\script\player.cpp(679): warning C4244: '引数': 'int' から 'FLOAT' への変換です。データが失われる可能性があります。
+  BandWhich.vcxproj -> C:\Users\game329\Documents\GitHub\Dodgeball000\dodgeball-master\チーム制作\BandWhich\Debug\BandWhich.exe
   BandWhich.vcxproj -> C:\Users\game329\Documents\GitHub\Dodgeball000\dodgeball-master\チーム制作\BandWhich\Debug\BandWhich.pdb (Full PDB)

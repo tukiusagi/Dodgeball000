@@ -40,7 +40,7 @@ void InitFade(MODE modeNext, HWND hWnd)
 	LPDIRECT3DDEVICE9 pDevice = GetDevice();
 
 	// èâä˙âª
-	g_fade = FADE_OUT;
+	g_fade = FADE_IN;
 	g_modeNext = modeNext;
 	g_colorFade = D3DXCOLOR(0.0f, 0.0f, 0.0f, 1.0f);// çïÇ¢âÊñ ÅiïsìßñæÅj
 	g_fade_hWnd = hWnd;

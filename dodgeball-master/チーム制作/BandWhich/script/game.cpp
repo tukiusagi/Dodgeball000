@@ -52,6 +52,7 @@
 #define ITEM2_HEIGHT	(100)							// アイテムの高さ
 #define MAX_SELECT		(4)								// 選択テクスチャ数
 #define SELECT_MAX		(3)								// 選択肢の数
+#define MAX_PALYER		(4)	//プレイヤー数
 
 //=============================================================================
 // プロトタイプ宣言
@@ -143,7 +144,7 @@ void UninitGame()
 	UninitPause();
 
 	// プレイヤーの終了処理
-	UninitPlayer();
+	//UninitPlayer();
 
 	//ボールの終了
 	UninitBall();
@@ -215,17 +216,35 @@ void UpdateGame()
 		UpdateField();
 	}
 
+	int nNumPlayer = 0;	//生きているプレイヤー数
+	int nID = 0;		//生き残ったプレイヤーの番号
 	switch (g_game.state)
 	{
 	case GAMESTATE_NORMAL:// 通常状態
 
 		g_game.nCounterState++;
 
+		for (int nCnt = 0; nCnt < MAX_PALYER; nCnt++)
+		{	
+			if (GetPlayerUse(nCnt))
+			{
+				nNumPlayer++;	//プレイヤー数カウント
+				nID = nCnt;
+			}
+		}
+		if (nNumPlayer == 1)
+		{	//最後の一人になったら終了
+			SetGameState(GAMESTATE_END);
+		}
+
 		if (GetKeyboardTrigger(DIK_P) || GetJoypadTrigger(g_game.nNowPlayer, JOYPADKEY_START))
 		{// ポーズを押した場合
 			g_game.state = GAMESTATE_PAUSE;
 		}
-
+		if (GetKeyboardTrigger(DIK_RETURN))
+		{
+			g_game.state = GAMESTATE_END;
+		}
 		if (g_game.nCounterState >= 60)
 		{
 			//if (GetKeyboardTrigger(DIK_SPACE) || GetKeyboardTrigger(DIK_RETURN) || GetJoypadTrigger(g_game.nNowPlayer, JOYPADKEY_A))

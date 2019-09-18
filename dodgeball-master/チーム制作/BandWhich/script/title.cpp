@@ -310,7 +310,7 @@ void InitTitle()
 	InitShadow();
 
 	// プレイヤーの終了処理
-	InitPlayer();
+	//InitPlayer();
 
 	// モデルの初期化処理
 	InitModel();
@@ -359,7 +359,7 @@ void UninitTitle()
 	UninitShadow();
 
 	// プレイヤーの終了処理
-	UninitPlayer();
+	//UninitPlayer();
 
 	// モデルの終了処理
 	UninitModel();

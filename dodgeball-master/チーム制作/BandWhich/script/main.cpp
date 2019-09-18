@@ -326,7 +326,7 @@ HRESULT Init(HINSTANCE hInstance, HWND hWnd, BOOL bWindow)
 	// ƒ^ƒCƒgƒ‹‰æ–Ê‚Ì‰Šú‰»
 	InitTitle();
 
-	InitResult();
+	//InitResult();
 
 	return S_OK;
 }

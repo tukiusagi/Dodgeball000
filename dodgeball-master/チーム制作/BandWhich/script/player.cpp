@@ -245,6 +245,18 @@ void UpdatePlayer(void)
 {
 	int nNumPlayer = GetNumPad();	// プレイヤーの人数
 
+	if (*GetMode() == MODE_RESULT)
+	{
+		for (int nCnt = 0; nCnt < nNumPlayer; nCnt++)
+		{
+			g_player[nCnt].pos = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
+			g_player[nCnt].rot = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
+			// モーションの再生
+			MotionPlayer(nCnt);
+		}
+		return;
+	}
+
 	for (int nCnt = 0; nCnt < nNumPlayer; nCnt++)
 	{
 		if (g_player[nCnt].bUse)
@@ -324,44 +336,6 @@ void UpdatePlayer(void)
 			// モーションの再生
 			MotionPlayer(nCnt);
 		}
-	}
-
-	// 色の変更処理
-	// 赤
-	if (GetKeyboardTrigger(DIK_R))
-	{
-		ChangeColor(D3DXCOLOR(1.0f, 0.0f, 0.0f, 1.0f), 0);
-	}
-	if (GetKeyboardRelease(DIK_R))
-	{
-		ChangeColor(D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f), 0);
-	}
-	// 青
-	if (GetKeyboardTrigger(DIK_B))
-	{
-		ChangeColor(D3DXCOLOR(0.0f, 0.0f, 1.0f, 1.0f), 1);
-	}
-	if (GetKeyboardRelease(DIK_B))
-	{
-		ChangeColor(D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f), 1);
-	}
-	// 黄色
-	if (GetKeyboardTrigger(DIK_Y))
-	{
-		ChangeColor(D3DXCOLOR(1.0f, 1.0f, 0.0f, 1.0f), 2);
-	}
-	if (GetKeyboardRelease(DIK_Y))
-	{
-		ChangeColor(D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f), 2);
-	}
-	// 緑
-	if (GetKeyboardTrigger(DIK_G))
-	{
-		ChangeColor(D3DXCOLOR(0.0f, 1.0f, 0.0f, 1.0f), 3);
-	}
-	if (GetKeyboardRelease(DIK_G))
-	{
-		ChangeColor(D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f), 3);
 	}
 }
 
@@ -1021,4 +995,12 @@ D3DXVECTOR3 *GetPlayerMove(int nNum)
 float *GetPlayerRadius(int nNum)
 {
 	return&g_player[nNum].fRadius;
+}
+
+//=============================================================================
+// プレイヤーの生死状態の取得処理
+//=============================================================================
+bool GetPlayerUse(int nNum)
+{
+	return g_player[nNum].bUse;
 }

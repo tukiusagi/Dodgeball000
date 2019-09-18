@@ -45,6 +45,15 @@ LPDIRECT3DTEXTURE9		g_apTextureField[MAX_TEXTURE] = {};	// ƒeƒNƒXƒ`ƒƒ‚Ö‚Ìƒ|ƒCƒ“ƒ
 LPDIRECT3DVERTEXBUFFER9 g_pVtxBuffField = NULL;				// ’¸“_ƒoƒbƒtƒ@‚Ö‚Ìƒ|ƒCƒ“ƒ^
 
 FIELD					g_aField[MAX_FIELD];				// •Ç‚Ìî•ñ
+typedef enum
+{
+	RED,
+	BLUE,
+	YELLOW,
+	GREEN,
+	COLOR_MAX
+}COLOR;
+COLOR g_aColor[4];
 
 //=============================================================================
 // ‰Šú‰»ˆ—
