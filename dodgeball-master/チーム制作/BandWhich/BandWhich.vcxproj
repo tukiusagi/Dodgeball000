@@ -161,6 +161,7 @@
     <ClCompile Include="script\joypad.cpp" />
     <ClCompile Include="script\keyboard.cpp" />
     <ClCompile Include="script\light.cpp" />
+    <ClCompile Include="script\logo.cpp" />
     <ClCompile Include="script\main.cpp" />
     <ClCompile Include="script\meshField.cpp" />
     <ClCompile Include="script\meshWall.cpp" />
@@ -186,6 +187,7 @@
     <ClInclude Include="script\joypad.h" />
     <ClInclude Include="script\keyboard.h" />
     <ClInclude Include="script\light.h" />
+    <ClInclude Include="script\logo.h" />
     <ClInclude Include="script\main.h" />
     <ClInclude Include="script\meshCylinder.h" />
     <ClInclude Include="script\meshField.h" />

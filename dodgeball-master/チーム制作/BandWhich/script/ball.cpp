@@ -252,20 +252,24 @@ void MoveLimitBall(D3DXVECTOR3 *pos, float fRadius)
 	if (pos->x > MESHFIELD_SIZE * 2 - fRadius)
 	{
 		pos->x = MESHFIELD_SIZE * 2 - fRadius;
+		g_aBall.move = D3DXVECTOR3(0, 0, 0);
 	}
 	if (pos->x < -MESHFIELD_SIZE * 2 + fRadius)
 	{
 		pos->x = -MESHFIELD_SIZE * 2 + fRadius;
+		g_aBall.move = D3DXVECTOR3(0, 0, 0);
 	}
 
 	//‰œŽè‘O
 	if (pos->z > MESHFIELD_SIZE * 2 - fRadius)
 	{
 		pos->z = MESHFIELD_SIZE * 2 - fRadius;
+		g_aBall.move = D3DXVECTOR3(0, 0, 0);
 	}
 	if (pos->z < -MESHFIELD_SIZE * 2 + fRadius)
 	{
 		pos->z = -MESHFIELD_SIZE * 2 + fRadius;
+		g_aBall.move = D3DXVECTOR3(0, 0, 0);
 	}
 }
 

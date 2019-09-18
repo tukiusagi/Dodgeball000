@@ -19,6 +19,7 @@
 #include "sound.h"
 #include "player.h"
 #include "title.h"
+#include"logo.h"
 
 //=============================================================================
 // リザルトの種類と状態
@@ -91,6 +92,18 @@ void InitResult()
 	// メッシュウォールの初期化処理
 	InitMeshWall();
 
+	//勝利ロゴの初期化
+	InitLogo();
+
+	int nID = 0;		//生き残ったプレイヤーの番号
+	for (int nCnt = 0; nCnt < MAX_NUMPLAYER; nCnt++)
+	{
+		if (GetPlayerUse(nCnt))
+		{	//何番が生き残った？
+			nID = nCnt;
+		}
+	}
+	SetLogo((LOGOTYPE)nID);
 }
 
 //=============================================================================
@@ -106,6 +119,9 @@ void UninitResult()
 
 	// メッシュウォールの終了処理
 	UninitMeshWall();
+
+	//ロゴの終了
+	UninitLogo();
 }
 
 //=============================================================================
@@ -121,6 +137,9 @@ void UpdateResult()
 
 	// プレイヤーの更新処理
 	UpdatePlayer();
+
+	//ロゴの更新
+	UpdateLogo();
 
 	g_nCntR--;		// カウンターを進める
 
@@ -154,4 +173,6 @@ void DrawResult()
 	// プレイヤーの描画処理
 	DrawPlayer();
 
+	//ロゴの描画
+	DrawLogo();
 }
